@@ -44,10 +44,17 @@ constipation = Symptom(name="Constipation", description="Difficulty passing stoo
 vomiting = Symptom(name="Vomiting", description="Ejection of stomach contents through the mouth due to gastrointestinal distress.")
 
 # Add Treatments
-antibiotics = Treatment(
-    name="Antibiotics", method="Administer orally or via injection")
-hydration = Treatment(name="Hydration Therapy",
-                      method="Provide clean water and electrolyte solutions")
+antibiotics = Treatment(name="Antibiotics", method="Administer orally or via injection to combat bacterial infections.")
+hydration = Treatment(name="Hydration Therapy", method="Provide clean water and electrolyte solutions to restore fluid balance.")
+deworming = Treatment(name="Deworming", method="Use anthelmintic drugs to eliminate internal parasites.")
+vaccination = Treatment(name="Vaccination", method="Administer vaccines to prevent viral and bacterial infections.")
+topical_ointment = Treatment(name="Topical Ointment", method="Apply medicated cream to affected skin areas.")
+anti_inflammatory = Treatment(name="Anti-Inflammatory Drugs", method="Inject or administer orally to reduce swelling and pain.")
+pain_relief = Treatment(name="Pain Relief", method="Use analgesics to alleviate pain symptoms.")
+wound_cleaning = Treatment(name="Wound Cleaning", method="Clean with antiseptic solution and dress to prevent infection.")
+antipyretics = Treatment(name="Antipyretics", method="Use fever reducers like paracetamol to lower high body temperature.")
+nutritional_supplements = Treatment(name="Nutritional Supplements", method="Provide minerals and vitamins to boost immune function.")
+isolation = Treatment(name="Isolation", method="Separate the sick animal to prevent disease spread.")
 
 # Add Preventions
 vaccination = Prevention(
