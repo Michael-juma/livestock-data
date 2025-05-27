@@ -47,7 +47,7 @@ vomiting = Symptom(name="Vomiting", description="Ejection of stomach contents th
 antibiotics = Treatment(name="Antibiotics", method="Administer orally or via injection to combat bacterial infections.")
 hydration = Treatment(name="Hydration Therapy", method="Provide clean water and electrolyte solutions to restore fluid balance.")
 deworming = Treatment(name="Deworming", method="Use anthelmintic drugs to eliminate internal parasites.")
-vaccination = Treatment(name="Vaccination", method="Administer vaccines to prevent viral and bacterial infections.")
+#vaccination = Treatment(name="Vaccination", method="Administer vaccines to prevent viral and bacterial infections.")
 topical_ointment = Treatment(name="Topical Ointment", method="Apply medicated cream to affected skin areas.")
 anti_inflammatory = Treatment(name="Anti-Inflammatory Drugs", method="Inject or administer orally to reduce swelling and pain.")
 pain_relief = Treatment(name="Pain Relief", method="Use analgesics to alleviate pain symptoms.")
@@ -180,24 +180,24 @@ rabies = Disease(
 # Add relationships
 fmd.species.extend([cow, goat, sheep, pig, horse, llama, alpaca])
 fmd.symptoms.extend([fever, skin_rash, cough, blood_in_stool, weight_loss, lameness, loss_of_appetite, diarrhea, constipation, vomiting])
-fmd.treatments.extend([antibiotics])
-fmd.preventions.extend([vaccination, sanitation])
+fmd.treatments.extend([antibiotics, hydration, deworming, topical_ointment, anti_inflammatory, pain_relief, wound_cleaning, antipyretics, nutritional_supplements, isolation])
+fmd.preventions.extend([vaccination, sanitation, quarantine, biosecurity, proper_nutrition, vector_control, clean_water, regular_health_checks, stress_reduction, proper_waste_management, good_husbandry_practices, prompt_treatment, vaccination_schedule, rodent_control, environmental_control])
 
 anthrax.species.extend([cow, goat, chicken, pig, sheep,
                        duck, horse, rabbit, turkey, alpaca, llama, cat, dog])
 anthrax.symptoms.extend([fever, cough, skin_rash, blood_in_stool, weight_loss, lameness, loss_of_appetite, diarrhea, constipation, vomiting])
-anthrax.treatments.extend([antibiotics, hydration])
-anthrax.preventions.extend([vaccination, sanitation])
+anthrax.treatments.extend([antibiotics, hydration, deworming, topical_ointment, anti_inflammatory, pain_relief, wound_cleaning, antipyretics, nutritional_supplements, isolation])
+anthrax.preventions.extend([vaccination, sanitation, quarantine, biosecurity, proper_nutrition, vector_control, clean_water, regular_health_checks, stress_reduction, proper_waste_management, good_husbandry_practices, prompt_treatment, vaccination_schedule, rodent_control, environmental_control])
 
 swine_erysipelas.species.extend([pig])
 swine_erysipelas.symptoms.extend([fever, skin_rash, cough, blood_in_stool, weight_loss, lameness, loss_of_appetite, diarrhea, constipation, vomiting])
-swine_erysipelas.treatments.extend([antibiotics])
-swine_erysipelas.preventions.extend([vaccination, sanitation])
+swine_erysipelas.treatments.extend([antibiotics, hydration, deworming, topical_ointment, anti_inflammatory, pain_relief, wound_cleaning, antipyretics, nutritional_supplements, isolation])
+swine_erysipelas.preventions.extend([vaccination, sanitation, quarantine, biosecurity, proper_nutrition, vector_control, clean_water, regular_health_checks, stress_reduction, proper_waste_management, good_husbandry_practices, prompt_treatment, vaccination_schedule, rodent_control, environmental_control])
 
 rabies.species.extend([dog, cat, cow, goat, sheep, pig, horse])
 rabies.symptoms.extend([fever, cough, skin_rash, blood_in_stool, weight_loss, lameness, loss_of_appetite, diarrhea, constipation, vomiting])
-rabies.treatments.extend([antibiotics])
-rabies.preventions.extend([vaccination, sanitation])
+rabies.treatments.extend([antibiotics, hydration, isolation])
+rabies.preventions.extend([vaccination, sanitation, quarantine, biosecurity, proper_nutrition, vector_control, clean_water, regular_health_checks, stress_reduction, proper_waste_management, good_husbandry_practices, prompt_treatment, vaccination_schedule, rodent_control, environmental_control])
 
 # Commit All to DB
 session.add_all([cow, goat, chicken, pig, sheep, duck, horse, rabbit, turkey, alpaca, llama, cat,
