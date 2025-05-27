@@ -56,11 +56,81 @@ antipyretics = Treatment(name="Antipyretics", method="Use fever reducers like pa
 nutritional_supplements = Treatment(name="Nutritional Supplements", method="Provide minerals and vitamins to boost immune function.")
 isolation = Treatment(name="Isolation", method="Separate the sick animal to prevent disease spread.")
 
-# Add Preventions
+# Preventive Measures
 vaccination = Prevention(
-    name="Vaccination", method="Routine immunization of livestock")
-sanitation = Prevention(name="Improved Sanitation",
-                        method="Keep pens clean to prevent infections")
+    name="Vaccination",
+    method="Routine immunization of livestock with appropriate vaccines to build immunity against common infectious diseases."
+)
+
+sanitation = Prevention(
+    name="Improved Sanitation",
+    method="Regular cleaning and disinfecting of animal pens, equipment, and feeding areas to reduce the risk of infections."
+)
+
+quarantine = Prevention(
+    name="Quarantine",
+    method="Isolating new or sick animals from the healthy herd for a specified period to prevent the spread of contagious diseases."
+)
+
+biosecurity = Prevention(
+    name="Biosecurity Measures",
+    method="Implementing strict controls on farm access, visitor hygiene, and equipment to minimize disease introduction."
+)
+
+proper_nutrition = Prevention(
+    name="Proper Nutrition",
+    method="Providing balanced diets with essential nutrients to strengthen animals’ immune systems and overall health."
+)
+
+vector_control = Prevention(
+    name="Vector Control",
+    method="Using insecticides, traps, and environmental management to reduce populations of disease-carrying insects and parasites."
+)
+
+clean_water = Prevention(
+    name="Clean Water Supply",
+    method="Ensuring access to clean and safe drinking water to prevent waterborne diseases."
+)
+
+regular_health_checks = Prevention(
+    name="Regular Health Checks",
+    method="Frequent veterinary inspections and monitoring to detect and manage diseases early."
+)
+
+stress_reduction = Prevention(
+    name="Stress Reduction",
+    method="Providing comfortable housing and minimizing overcrowding to reduce stress-related susceptibility to diseases."
+)
+
+proper_waste_management = Prevention(
+    name="Proper Waste Management",
+    method="Safe disposal and treatment of animal waste to prevent contamination of the environment and disease spread."
+)
+
+good_husbandry_practices = Prevention(
+    name="Good Husbandry Practices",
+    method="Following best management practices including proper handling, housing, and care of livestock."
+)
+
+prompt_treatment = Prevention(
+    name="Prompt Treatment",
+    method="Early identification and treatment of sick animals to prevent disease progression and transmission."
+)
+
+vaccination_schedule = Prevention(
+    name="Adherence to Vaccination Schedule",
+    method="Strictly following recommended vaccination timings to ensure continuous immunity."
+)
+
+rodent_control = Prevention(
+    name="Rodent Control",
+    method="Controlling rodent populations that can act as disease reservoirs on farms."
+)
+
+environmental_control = Prevention(
+    name="Environmental Control",
+    method="Maintaining optimal temperature, humidity, and ventilation in animal housing to reduce disease risk."
+)
 
 # Add Disease
 fmd = Disease(
