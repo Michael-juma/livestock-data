@@ -212,6 +212,24 @@ Effective control requires strict biosecurity protocols, movement restrictions o
     image_url="https://example.com/btb.jpg"
 )
 
+
+
+brucellosis = Disease(
+    name="Brucellosis",
+    abbreviation="BRU",
+    region="Worldwide",
+    description="""
+Brucellosis is an infectious disease caused by bacteria of the genus Brucella, affecting cattle (B. abortus), sheep and goats (B. melitensis), pigs (B. suis), and occasionally other animals. It is a major cause of reproductive failure in livestock, with symptoms such as abortion, retained placenta, infertility, and orchitis in males.
+
+The disease spreads through direct contact with infected reproductive fluids, ingestion of contaminated materials, or exposure to contaminated environments. Humans can contract the disease through raw dairy products or occupational exposure, leading to a condition known as undulant fever.
+
+There is no treatment for infected livestock; eradication programs typically involve testing, culling, and vaccination. Vaccination of young animals has proven effective in controlling disease prevalence in endemic regions.
+
+Brucellosis control requires comprehensive surveillance, public education, and intersectoral cooperation between animal and human health services. Proper handling of birth products and carcasses is crucial in preventing spread.
+""",
+    image_url="https://example.com/brucellosis.jpg"
+)
+
 #relationships
 fmd.species.extend([cow, goat, sheep, pig, horse, llama, alpaca])
 fmd.symptoms.extend([fever, skin_rash, cough, blood_in_stool, weight_loss,
@@ -252,9 +270,17 @@ btb.treatments.extend([antibiotics, hydration, deworming, topical_ointment, anti
 btb.preventions.extend([vaccination, sanitation, quarantine, biosecurity, proper_nutrition, vector_control, clean_water, regular_health_checks,
                        stress_reduction, proper_waste_management, good_husbandry_practices, prompt_treatment, vaccination_schedule, rodent_control, environmental_control])
 
+brucellosis.species.extend([cow, goat, sheep, pig])
+brucellosis.symptoms.extend([fever, cough, skin_rash, blood_in_stool, weight_loss,
+                             lameness, loss_of_appetite, diarrhea, constipation, vomiting])
+brucellosis.treatments.extend([antibiotics, hydration, deworming, topical_ointment, anti_inflammatory,
+                               pain_relief, wound_cleaning, antipyretics, nutritional_supplements, isolation])
+brucellosis.preventions.extend([vaccination, sanitation, quarantine, biosecurity, proper_nutrition, vector_control, clean_water, regular_health_checks,
+                                stress_reduction, proper_waste_management, good_husbandry_practices, prompt_treatment, vaccination_schedule, rodent_control, environmental_control])
+
 # Commit All to DB
 session.add_all([cow, goat, chicken, pig, sheep, duck, horse, rabbit, turkey, alpaca, llama, cat,
-                dog, fish, bee, fever, cough, skin_rash, blood_in_stool, weight_loss, lameness, loss_of_appetite, diarrhea, constipation, vomiting, antibiotics, hydration, vaccination, sanitation, fmd, anthrax, swine_erysipelas, rabies, btb])
+                dog, fish, bee, fever, cough, skin_rash, blood_in_stool, weight_loss, lameness, loss_of_appetite, diarrhea, constipation, vomiting, antibiotics, hydration, vaccination, sanitation, fmd, anthrax, swine_erysipelas, rabies, btb, brucellosis])
 session.commit()
 
 print("Sample data added successfully!")
