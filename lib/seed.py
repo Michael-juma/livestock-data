@@ -196,8 +196,23 @@ rabies = Disease(
     description="""Rabies is a viral disease caused by the rabies virus, primarily affecting mammals, including livestock and humans. It is transmitted through the bite of an infected animal, most commonly dogs, bats, and wild carnivores. The virus attacks the central nervous system, leading to encephalitis and ultimately death if untreated.""",
     image_url="https://example.com/rabies.jpg"
 )
+btb = Disease(
+    name="Bovine Tuberculosis",
+    abbreviation="BTB",
+    region="Worldwide",
+    description="""
+Bovine Tuberculosis is a chronic bacterial disease caused by Mycobacterium bovis, which primarily affects cattle but can infect a wide range of mammals, including humans. The bacteria spread through inhalation of infected aerosols or ingestion of contaminated feed and water. Infected animals may carry the disease asymptomatically for long periods, making it difficult to detect and control.
 
-# Add relationships
+Clinically, signs include chronic coughing, weight loss, enlarged lymph nodes, and general weakness. In some animals, no signs are visible until the disease has progressed significantly. It often spreads insidiously within herds, increasing the risk of transmission to other animals and potentially to farm workers handling livestock.
+
+BTB is a zoonotic disease and poses public health risks, especially in regions where milk is consumed unpasteurized. Surveillance, routine testing, and culling of infected animals are common control measures. Vaccines are under development but not yet widely available or effective in cattle populations.
+
+Effective control requires strict biosecurity protocols, movement restrictions on affected herds, and proper carcass disposal. Regular veterinary inspections and education of livestock handlers are critical in minimizing disease incidence.
+""",
+    image_url="https://example.com/btb.jpg"
+)
+
+#relationships
 fmd.species.extend([cow, goat, sheep, pig, horse, llama, alpaca])
 fmd.symptoms.extend([fever, skin_rash, cough, blood_in_stool, weight_loss,
                     lameness, loss_of_appetite, diarrhea, constipation, vomiting])
@@ -229,10 +244,17 @@ rabies.symptoms.extend([fever, cough, skin_rash, blood_in_stool, weight_loss,
 rabies.treatments.extend([antibiotics, hydration, isolation])
 rabies.preventions.extend([vaccination, sanitation, quarantine, biosecurity, proper_nutrition, vector_control, clean_water, regular_health_checks,
                           stress_reduction, proper_waste_management, good_husbandry_practices, prompt_treatment, vaccination_schedule, rodent_control, environmental_control])
+btb.species.extend([cow, goat, sheep, pig, horse])
+btb.symptoms.extend([fever, cough, skin_rash, blood_in_stool, weight_loss,
+                    lameness, loss_of_appetite, diarrhea, constipation, vomiting])
+btb.treatments.extend([antibiotics, hydration, deworming, topical_ointment, anti_inflammatory,
+                      pain_relief, wound_cleaning, antipyretics, nutritional_supplements, isolation])
+btb.preventions.extend([vaccination, sanitation, quarantine, biosecurity, proper_nutrition, vector_control, clean_water, regular_health_checks,
+                       stress_reduction, proper_waste_management, good_husbandry_practices, prompt_treatment, vaccination_schedule, rodent_control, environmental_control])
 
 # Commit All to DB
 session.add_all([cow, goat, chicken, pig, sheep, duck, horse, rabbit, turkey, alpaca, llama, cat,
-                dog, fish, bee, fever, cough, skin_rash, blood_in_stool, weight_loss, lameness, loss_of_appetite, diarrhea, constipation, vomiting, antibiotics, hydration, vaccination, sanitation, fmd, anthrax, swine_erysipelas, rabies])
+                dog, fish, bee, fever, cough, skin_rash, blood_in_stool, weight_loss, lameness, loss_of_appetite, diarrhea, constipation, vomiting, antibiotics, hydration, vaccination, sanitation, fmd, anthrax, swine_erysipelas, rabies, btb])
 session.commit()
 
 print("Sample data added successfully!")
