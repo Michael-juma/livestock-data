@@ -134,7 +134,7 @@ sudden_collapse = Symptom(
 )
 
 
-# Add Treatments
+# Animals Treatments
 antibiotics = Treatment(
     name="Antibiotics", method="Administer orally or via injection to combat bacterial infections.")
 hydration = Treatment(name="Hydration Therapy",
@@ -157,7 +157,70 @@ nutritional_supplements = Treatment(
 isolation = Treatment(
     name="Isolation", method="Separate the sick animal to prevent disease spread.")
 
-# Preventive Measures
+# Bee Treatments
+
+thymol_treatment = Treatment(
+    name="Thymol Treatment", method="Apply thymol-based products to control Varroa mites and fungal infections."
+)
+
+formic_acid = Treatment(
+    name="Formic Acid Application", method="Use formic acid pads or vapor to reduce mite infestations within the hive."
+)
+
+oxalic_acid = Treatment(
+    name="Oxalic Acid Drip", method="Drip or vaporize oxalic acid to manage Varroa destructor mites safely."
+)
+
+antiviral_probiotics = Treatment(
+    name="Antiviral Probiotics", method="Supplement hives with specific probiotics to boost immunity against viral infections."
+)
+
+queen_replacement = Treatment(
+    name="Queen Replacement", method="Replace failing or infected queens with healthy ones to restore colony health."
+)
+
+hive_relocation = Treatment(
+    name="Hive Relocation", method="Move the hive to a cleaner, stress-free environment to support recovery."
+)
+
+sugar_dusting = Treatment(
+    name="Sugar Dusting", method="Dust bees with powdered sugar to dislodge mites from their bodies."
+)
+
+essential_oils = Treatment(
+    name="Essential Oils", method="Administer oils like lemongrass or spearmint to support health and deter pests."
+)
+
+hive_disinfection = Treatment(
+    name="Hive Disinfection", method="Use acetic acid or heat treatment to disinfect empty hives before reuse."
+)
+
+protein_patties = Treatment(
+    name="Protein Patties", method="Provide protein supplements to support larval growth and general colony strength."
+)
+
+nosema_control = Treatment(
+    name="Nosema Control", method="Treat with fumagillin or herbal alternatives to reduce Nosema spore load."
+)
+
+brood_interruption = Treatment(
+    name="Brood Cycle Interruption", method="Temporarily remove brood to break mite reproduction cycles."
+)
+
+drone_trapping = Treatment(
+    name="Drone Brood Trapping", method="Use drone combs to trap and remove mites concentrated in drone brood."
+)
+
+thermal_treatment = Treatment(
+    name="Thermal Hive Treatment", method="Apply controlled heat to hives to eliminate mites without harming bees."
+)
+
+honey_frame_removal = Treatment(
+    name="Honey Frame Removal", method="Extract honey frames with potential contamination to prevent pathogen spread."
+)
+
+
+# Animals Preventive Measures
 vaccination = Prevention(
     name="Vaccination",
     method="Routine immunization of livestock with appropriate vaccines to build immunity against common infectious diseases."
@@ -233,7 +296,50 @@ environmental_control = Prevention(
     method="Maintaining optimal temperature, humidity, and ventilation in animal housing to reduce disease risk."
 )
 
-# Add Disease
+# Bee Preventive Measures
+
+hive_inspection = Prevention(
+    name="Hive Inspection",
+    method="Regularly inspect hives for signs of disease or pests to enable early intervention."
+)
+apiary_hygiene = Prevention(
+    name="Apiary Hygiene",
+    method="Maintain cleanliness in and around the apiary to reduce the risk of disease transmission."
+)
+equipment_sterilization = Prevention(
+    name="Equipment Sterilization",
+    method="Sterilize beekeeping equipment between uses to prevent the spread of pathogens."
+)
+sourcing_from_healthy_hives = Prevention(
+    name="Sourcing from Healthy Hives",
+    method="Obtain bees and hive materials only from disease-free, reputable sources."
+)
+feeding_practices = Prevention(
+    name="Feeding Practices",
+    method="Provide supplemental feeding when natural forage is scarce to maintain colony health."
+)
+hive_spacing = Prevention(
+    name="Hive Spacing",
+    method="Space hives adequately to reduce stress and minimize disease transmission."
+)
+adequate_ventilation = Prevention(
+    name="Adequate Ventilation",
+    method="Ensure hives have proper ventilation to prevent moisture buildup and fungal diseases."
+)
+genetic_selection = Prevention(
+    name="Genetic Selection",
+    method="Breed or select bees with traits for disease resistance and hygienic behavior."
+)
+swarm_control = Prevention(
+    name="Swarm Control",
+    method="Implement management practices to prevent swarming, which can weaken colonies and spread disease."
+)
+pest_monitoring = Prevention(
+    name="Pest Monitoring",
+    method="Regularly monitor for pests such as Varroa mites to enable timely control measures."
+)
+
+# Disease
 fmd = Disease(
     name="Foot-and-Mouth Disease",
     abbreviation="FMD",
@@ -292,7 +398,6 @@ Effective control requires strict biosecurity protocols, movement restrictions o
 """,
     image_url="https://example.com/btb.jpg"
 )
-
 
 
 brucellosis = Disease(
@@ -408,7 +513,7 @@ Regular mite monitoring, rotating treatments, and breeding mite-resistant bee st
 )
 
 
-#relationships
+# relationships
 fmd.species.extend([cow, goat, sheep, pig, horse, llama, alpaca])
 fmd.symptoms.extend([fever, skin_rash, cough, blood_in_stool, weight_loss,
                     lameness, loss_of_appetite, diarrhea, constipation, vomiting])
@@ -455,15 +560,98 @@ brucellosis.treatments.extend([antibiotics, hydration, deworming, topical_ointme
                                pain_relief, wound_cleaning, antipyretics, nutritional_supplements, isolation])
 brucellosis.preventions.extend([vaccination, sanitation, quarantine, biosecurity, proper_nutrition, vector_control, clean_water, regular_health_checks,
                                 stress_reduction, proper_waste_management, good_husbandry_practices, prompt_treatment, vaccination_schedule, rodent_control, environmental_control])
-#specify for bees only
+# specify for bees only
+# American Foulbrood (AFB)
 afb.species.extend([bee])
-afb.symptoms.extend([paralysis, trembling, crawling, distended_abdomen, dysentery, discolored_larvae, mummified_larvae, foul_odor, sunken_cappings, larval_twisting, sac_like_larvae, deformed_wings])
+afb.symptoms.extend([
+    discolored_larvae, mummified_larvae, foul_odor,
+    sunken_cappings, larval_twisting
+])
+afb.treatments.extend([
+    hive_disinfection, queen_replacement
+])
+afb.preventions.extend([
+    hive_inspection, apiary_hygiene, equipment_sterilization,
+    sourcing_from_healthy_hives
+])
 
+# European Foulbrood (EFB)
+efb.species.extend([bee])
+efb.symptoms.extend([
+    discolored_larvae, larval_twisting, foul_odor
+])
+oxytetracycline = Treatment(
+    name="Oxytetracycline",
+    method="Administer oxytetracycline as an antibiotic treatment for bacterial infections such as European Foulbrood."
+)
+efb.treatments.extend([
+    oxytetracycline, hive_relocation
+])
+efb.preventions.extend([
+    hive_inspection, apiary_hygiene, equipment_sterilization
+])
 
+# Nosema
+nosema.species.extend([bee])
+nosema.symptoms.extend([
+    dysentery, crawling, distended_abdomen
+])
+nosema.treatments.extend([
+    nosema_control, protein_patties
+])
+hive_ventilation = Prevention(
+    name="Hive Ventilation",
+    method="Ensure proper airflow in the hive to reduce moisture and prevent disease."
+)
+nosema.preventions.extend([
+    feeding_practices, hive_ventilation, hive_spacing
+])
 
-# Commit All to DB
+# Chalkbrood
+chalkbrood.species.extend([bee])
+chalkbrood.symptoms.extend([
+    mummified_larvae, discolored_larvae
+])
+chalkbrood.treatments.extend([
+    hive_relocation, hive_disinfection
+])
+chalkbrood.preventions.extend([
+    adequate_ventilation, genetic_selection, hive_spacing
+])
+
+# Sacbrood Virus (SBV)
+dead_brood = Symptom(
+    name="Dead Brood",
+    description="Brood that has died due to infection, often appearing discolored or sunken in the cell."
+)
+sbv.species.extend([bee])
+sbv.symptoms.extend([
+    sac_like_larvae, dead_brood, sunken_cappings
+])
+sbv.treatments.extend([
+    queen_replacement, hive_disinfection
+])
+sbv.preventions.extend([
+    apiary_hygiene, swarm_control, genetic_selection
+])
+
+# Deformed Wing Virus (DWV)
+dwv.species.extend([bee])
+dwv.symptoms.extend([
+    deformed_wings, paralysis, crawling
+])
+varroa_mite_control = Treatment(
+    name="Varroa Mite Control",
+    method="Implement integrated pest management strategies, including chemical and non-chemical methods, to control Varroa mite infestations."
+)
+dwv.treatments.extend([
+    antiviral_probiotics, varroa_mite_control
+])
+dwv.preventions.extend([
+    pest_monitoring, genetic_selection, hive_inspection])
 session.add_all([cow, goat, chicken, pig, sheep, duck, horse, rabbit, turkey, alpaca, llama, cat,
-                dog, fish, bee, fever, cough, skin_rash, blood_in_stool, weight_loss, lameness, loss_of_appetite, diarrhea, constipation, vomiting, antibiotics, hydration, vaccination, sanitation, fmd, anthrax, swine_erysipelas, rabies, btb, brucellosis])
+                dog, fish, bee, fever, cough, skin_rash, blood_in_stool, weight_loss, lameness, loss_of_appetite, diarrhea, constipation, vomiting, antibiotics, hydration, vaccination, sanitation, fmd, anthrax, swine_erysipelas, rabies, btb, brucellosis, efb, nosema, chalkbrood, sbv, dwv, dead_brood])
 session.commit()
+
 
 print("Sample data added successfully!")
