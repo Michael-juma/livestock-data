@@ -230,6 +230,103 @@ Brucellosis control requires comprehensive surveillance, public education, and i
     image_url="https://example.com/brucellosis.jpg"
 )
 
+afb = Disease(
+    name="American Foulbrood",
+    abbreviation="AFB",
+    region="Worldwide",
+    description="""
+American Foulbrood (AFB) is a highly infectious and lethal bacterial disease affecting honeybee brood. It is caused by Paenibacillus larvae, a spore-forming bacterium that can remain viable in the environment for decades. The disease primarily targets larvae under three days old and rapidly destroys the colony if not contained.
+
+Symptoms include sunken, perforated cappings over brood cells, a foul rotten odor, and a dark, gooey consistency of dead larvae. A hallmark sign is the formation of a stringy thread when a matchstick is inserted into the cell and withdrawn — known as the "ropy test."
+
+AFB spreads through contaminated beekeeping equipment, robbing behavior, and drift between hives. There is no cure for the disease; control involves burning infected hives and equipment, and sometimes prophylactic antibiotics in regions where they are allowed.
+
+Stringent biosecurity practices, regular hive inspections, and immediate action upon detection are essential to preventing large-scale outbreaks.
+""",
+    image_url="https://example.com/afb.jpg"
+)
+
+efb = Disease(
+    name="European Foulbrood",
+    abbreviation="EFB",
+    region="Worldwide (temperate regions)",
+    description="""
+European Foulbrood (EFB) is a bacterial disease caused by Melissococcus plutonius that affects honeybee larvae. Unlike American Foulbrood, EFB typically impacts larvae before the cell is capped and tends to be less destructive, though it can severely weaken colonies.
+
+Infected larvae appear twisted in their cells, yellowish or brown in color, and emit a sour odor. The disease is often associated with stress factors like poor nutrition or overcrowding, which makes colonies more susceptible.
+
+EFB can be managed through improved hive management, feeding practices, and the use of antibiotics where permitted. Strong, well-fed colonies often recover naturally once environmental stressors are removed.
+
+Regular monitoring, requeening with hygienic stock, and improved apiary hygiene are effective control measures.
+""",
+    image_url="https://example.com/efb.jpg"
+)
+
+nosema = Disease(
+    name="Nosema Disease",
+    abbreviation="Nosema",
+    region="Worldwide",
+    description="""
+Nosema disease is caused by microsporidian parasites—Nosema apis and Nosema ceranae—that infect the midgut cells of adult bees. It results in dysentery, lethargy, reduced foraging, and colony decline. The disease often emerges during cooler, damp periods when bees are confined indoors.
+
+Infected bees exhibit symptoms like swollen abdomens, inability to fly, and scattered dead bees around the hive entrance. Fecal streaks on the hive surface are also common. Nosema weakens immune function and shortens bee lifespan, leading to dwindling colony populations.
+
+Treatment includes administering fumagillin (where legal) and improving hive ventilation and nutrition. Replacing old comb and reducing moisture in the hive are additional preventive strategies.
+
+Routine monitoring, especially in early spring and fall, is critical to catch Nosema infections early before colony collapse.
+""",
+    image_url="https://example.com/nosema.jpg"
+)
+
+chalkbrood = Disease(
+    name="Chalkbrood",
+    abbreviation="CB",
+    region="Worldwide",
+    description="""
+Chalkbrood is a fungal disease affecting honeybee larvae, caused by Ascosphaera apis. It thrives in cool, damp hive conditions and results in mummified larvae that resemble chalky white or gray pellets, often found at the hive entrance.
+
+Larvae become infected after ingesting spores that germinate in the gut. As the fungus grows, it fills the larval body with a cotton-like mycelium, eventually killing it. Although not typically fatal to entire colonies, it can weaken them, reduce brood viability, and lower honey production.
+
+Preventive strategies include improving hive ventilation, reducing moisture, and requeening with hygienic bee strains. Cleaning or replacing infected frames is also recommended.
+
+The disease is often seasonal and can resolve when weather conditions improve and stress factors are minimized.
+""",
+    image_url="https://example.com/chalkbrood.jpg"
+)
+
+sbv = Disease(
+    name="Sacbrood Virus",
+    abbreviation="SBV",
+    region="Worldwide",
+    description="""
+Sacbrood Virus (SBV) is a common viral disease in honeybee colonies, particularly affecting larvae. It prevents larvae from pupating properly, leaving them as fluid-filled sacs that dry into scale-like remains within the brood cells.
+
+Symptoms include dead larvae with a rice-grain appearance, a lack of normal segmentation, and a stretched sac filled with clear fluid. The disease often coincides with stressful conditions like poor nutrition or weak colonies.
+
+SBV is usually not fatal to entire colonies and can often be managed through improved colony strength, good nutrition, and hygienic queen lines. No direct treatment exists, but strong hives typically outgrow the infection.
+
+Routine inspection and removing heavily infected brood combs help limit the spread of the virus.
+""",
+    image_url="https://example.com/sbv.jpg"
+)
+
+dwv = Disease(
+    name="Deformed Wing Virus",
+    abbreviation="DWV",
+    region="Worldwide",
+    description="""
+Deformed Wing Virus (DWV) is a viral disease most commonly associated with Varroa mite infestations. It causes developmental deformities in adult bees, particularly shriveled or twisted wings, leading to impaired flight and early death.
+
+The virus is transmitted primarily by Varroa destructor mites, which feed on bee fat bodies and spread the virus directly into their circulatory system. DWV weakens individual bees and leads to colony collapse if left unchecked.
+
+No direct treatment exists for DWV, but controlling Varroa mite populations is the most effective management strategy. This can be achieved through mechanical, biological, or chemical interventions.
+
+Regular mite monitoring, rotating treatments, and breeding mite-resistant bee strains are key to preventing DWV outbreaks.
+""",
+    image_url="https://example.com/dwv.jpg"
+)
+
+
 #relationships
 fmd.species.extend([cow, goat, sheep, pig, horse, llama, alpaca])
 fmd.symptoms.extend([fever, skin_rash, cough, blood_in_stool, weight_loss,
@@ -277,6 +374,9 @@ brucellosis.treatments.extend([antibiotics, hydration, deworming, topical_ointme
                                pain_relief, wound_cleaning, antipyretics, nutritional_supplements, isolation])
 brucellosis.preventions.extend([vaccination, sanitation, quarantine, biosecurity, proper_nutrition, vector_control, clean_water, regular_health_checks,
                                 stress_reduction, proper_waste_management, good_husbandry_practices, prompt_treatment, vaccination_schedule, rodent_control, environmental_control])
+#specify for bees only
+afb.species.extend([bee])
+
 
 # Commit All to DB
 session.add_all([cow, goat, chicken, pig, sheep, duck, horse, rabbit, turkey, alpaca, llama, cat,
