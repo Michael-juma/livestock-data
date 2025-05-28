@@ -52,6 +52,87 @@ constipation = Symptom(
     name="Constipation", description="Difficulty passing stool, which may indicate digestive issues.")
 vomiting = Symptom(
     name="Vomiting", description="Ejection of stomach contents through the mouth due to gastrointestinal distress.")
+#  bees
+paralysis = Symptom(
+    name="Paralysis", description="Loss of muscle function in wings or legs, often resulting from viral infections like Chronic Bee Paralysis Virus (CBPV)."
+)
+
+trembling = Symptom(
+    name="Trembling", description="Uncontrolled shaking of the bee’s body or wings, typically seen in neurological or viral infections."
+)
+
+crawling = Symptom(
+    name="Crawling Behavior", description="Bees unable to fly, seen crawling near hive entrances, commonly associated with Deformed Wing Virus or Nosema."
+)
+
+distended_abdomen = Symptom(
+    name="Distended Abdomen", description="Swollen and bloated abdomen, often a sign of Nosema infection or dysentery."
+)
+
+dysentery = Symptom(
+    name="Dysentery", description="Excessive defecation inside or around the hive, typically due to poor nutrition, Nosema, or prolonged confinement."
+)
+
+discolored_larvae = Symptom(
+    name="Discolored Larvae", description="Larvae turning yellow, brown, or black, usually indicating brood disease like American or European Foulbrood."
+)
+
+mummified_larvae = Symptom(
+    name="Mummified Larvae", description="Dead larvae that dry out and resemble chalk, characteristic of Chalkbrood infection."
+)
+
+foul_odor = Symptom(
+    name="Foul Odor", description="Strong, unpleasant smell in the brood chamber, a classic sign of American Foulbrood."
+)
+
+sunken_cappings = Symptom(
+    name="Sunken Cappings", description="Depressed and sometimes perforated cell cappings over diseased brood, common in Foulbrood infections."
+)
+
+larval_twisting = Symptom(
+    name="Larval Twisting", description="Larvae appearing twisted or misaligned in their cells, often associated with European Foulbrood."
+)
+
+sac_like_larvae = Symptom(
+    name="Sac-like Larvae", description="Dead larvae resembling fluid-filled sacs, a hallmark symptom of Sacbrood Virus."
+)
+
+deformed_wings = Symptom(
+    name="Deformed Wings", description="Misshapen or crumpled wings in adult bees, typically caused by Deformed Wing Virus."
+)
+
+flightlessness = Symptom(
+    name="Flightlessness", description="Inability of adult bees to fly, frequently linked to wing deformities or neurological damage."
+)
+
+hairless_abdomen = Symptom(
+    name="Hairless Abdomen", description="Smooth, shiny thorax or abdomen due to loss of body hair, often seen in bees infected with CBPV."
+)
+
+reduced_flight_activity = Symptom(
+    name="Reduced Flight Activity", description="Fewer foraging trips or inactivity around the hive, commonly seen during illness or parasite infestation."
+)
+
+scattered_brood = Symptom(
+    name="Scattered Brood Pattern", description="Irregular brood layout with many empty cells, suggesting poor queen performance or disease."
+)
+
+larval_death_before_capping = Symptom(
+    name="Larval Death Before Capping", description="Larvae dying before being capped, a typical symptom of European Foulbrood."
+)
+
+abnormal_pupa = Symptom(
+    name="Abnormal Pupa", description="Pupae with missing or malformed body parts, possibly due to viral infections or pesticide exposure."
+)
+
+queen_rejection = Symptom(
+    name="Queen Rejection", description="Workers ejecting or attacking the queen, often following queen infection or exposure to stress."
+)
+
+sudden_collapse = Symptom(
+    name="Sudden Colony Collapse", description="Rapid disappearance of the worker population, commonly referred to as Colony Collapse Disorder (CCD)."
+)
+
 
 # Add Treatments
 antibiotics = Treatment(
@@ -376,6 +457,8 @@ brucellosis.preventions.extend([vaccination, sanitation, quarantine, biosecurity
                                 stress_reduction, proper_waste_management, good_husbandry_practices, prompt_treatment, vaccination_schedule, rodent_control, environmental_control])
 #specify for bees only
 afb.species.extend([bee])
+afb.symptoms.extend([paralysis, trembling, crawling, distended_abdomen, dysentery, discolored_larvae, mummified_larvae, foul_odor, sunken_cappings, larval_twisting, sac_like_larvae, deformed_wings])
+
 
 
 # Commit All to DB
