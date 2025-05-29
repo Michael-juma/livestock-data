@@ -192,6 +192,26 @@ abortion = Symptom(
     name="Abortion",
     description="Premature expulsion of the fetus, a possible symptom in infected pregnant animals."
 )
+vesicles_in_mouth_and_feet = Symptom(
+    name="Vesicles in Mouth and Feet",
+    description="Blister-like lesions in the mouth and between the hooves, characteristic of FMD."
+)
+reluctance_to_move = Symptom(
+    name="Reluctance to Move",
+    description="Hesitation or refusal to move, often due to pain from lesions."
+)
+ulcers = Symptom(
+    name="Ulcers",
+    description="Open sores in the mouth or on the feet."
+)
+stomatitis = Symptom(
+    name="Stomatitis",
+    description="Inflammation of the mouth lining."
+)
+hoof_lesions = Symptom(
+    name="Hoof Lesions",
+    description="Lesions or sores on the hooves, leading to lameness."
+)
 
 # Animals Treatments
 antibiotics = Treatment(
@@ -286,7 +306,10 @@ varroa_mite_control = Treatment(
     name="Varroa Mite Control",
     method="Implement integrated pest management strategies, including chemical and non-chemical methods, to control Varroa mite infestations."
 )
-
+supportive_care = Treatment(
+    name="Supportive Care",
+    method="Provide hydration, nutrition, and pain relief to support recovery."
+)
 
 # Animals Preventive Measures
 vaccination = Prevention(
@@ -410,7 +433,10 @@ hive_ventilation = Prevention(
     name="Hive Ventilation",
     method="Ensure proper airflow in the hive to reduce moisture and prevent disease."
 )
-
+movement_control = Prevention(
+    name="Movement Control",
+    method="Restrict movement of animals and enforce animal movement permits to prevent the spread of infectious diseases."
+)
 
 # Disease
 fmd = Disease(
@@ -588,12 +614,45 @@ Regular mite monitoring, rotating treatments, and breeding mite-resistant bee st
 
 # relationships
 fmd.species.extend([cow, goat, sheep, pig, horse, llama, alpaca])
-fmd.symptoms.extend([fever, skin_rash, cough, blood_in_stool, weight_loss,
-                    lameness, loss_of_appetite, diarrhea, constipation, vomiting])
-fmd.treatments.extend([antibiotics, hydration, deworming, topical_ointment, anti_inflammatory,
-                      pain_relief, wound_cleaning, antipyretics, nutritional_supplements, isolation])
-fmd.preventions.extend([vaccination, sanitation, quarantine, biosecurity, proper_nutrition, vector_control, clean_water, regular_health_checks,
-                       stress_reduction, proper_waste_management, good_husbandry_practices, prompt_treatment, vaccination_schedule, rodent_control, environmental_control])
+fmd.symptoms.extend([
+    fever,
+    vesicles_in_mouth_and_feet,
+    lameness,
+    loss_of_appetite,
+    excessive_salivation,
+    reluctance_to_move,
+    weight_loss,
+    ulcers,
+    stomatitis,
+    hoof_lesions
+])
+
+
+fmd.treatments.extend([
+    supportive_care,
+    hydration,
+    pain_relief,
+    isolation,
+    wound_cleaning,
+    antipyretics,
+    nutritional_supplements
+])
+
+fmd.preventions.extend([
+    vaccination,
+    quarantine,
+    sanitation,
+    biosecurity,
+    movement_control,
+    proper_nutrition,
+    regular_health_checks,
+    stress_reduction,
+    proper_waste_management,
+    good_husbandry_practices,
+    prompt_treatment,
+    vaccination_schedule,
+    environmental_control
+])
 
 anthrax.species.extend([cow, goat, pig, sheep, horse, rabbit, alpaca, llama, cat, dog])
 anthrax.symptoms.extend([
