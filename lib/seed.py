@@ -621,7 +621,7 @@ Regular mite monitoring, rotating treatments, and breeding mite-resistant bee st
     image_url="https://example.com/dwv.jpg"
 )
 
-# Establish relationships between diseases, species, symptoms, treatments, and preventions
+#relationships between diseases, species, symptoms, treatments, and preventions
 
 # Foot-and-Mouth Disease relationships
 fmd.species.extend([cow, goat, sheep, pig, horse, llama, alpaca])
