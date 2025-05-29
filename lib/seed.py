@@ -609,7 +609,7 @@ anthrax.symptoms.extend([
 anthrax.treatments.extend([
     antibiotics,
     isolation,
-    hydration  # optional/supportive
+    hydration,
 ])
 anthrax.preventions.extend([
     vaccination,
@@ -618,8 +618,8 @@ anthrax.preventions.extend([
     sanitation,
     proper_waste_management,
     environmental_control,
-    rodent_control,  # optional
-    clean_water,     # optional
+    rodent_control, 
+    clean_water,    
 ])
 
 swine_erysipelas.species.extend([pig])
