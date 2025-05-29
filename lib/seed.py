@@ -164,7 +164,34 @@ excessive_vocalization = Symptom(
     name="Excessive Vocalization",
     description="Unusual or increased vocal sounds, such as barking, howling, or bellowing, seen in rabid animals."
 )
-
+swollen_udder = Symptom(
+    name="Swollen Udder",
+    description="Enlargement or inflammation of the udder, often associated with infection or mastitis."
+)
+joint_swelling = Symptom(
+    name="Joint Swelling",
+    description="Swelling of joints, which may indicate infection or inflammation, commonly seen in brucellosis."
+)
+bleeding_from_orifices = Symptom(
+    name="Bleeding from Orifices",
+    description="Bleeding from the mouth, nose, or anus, often seen in acute anthrax cases."
+)
+sudden_death = Symptom(
+    name="Sudden Death",
+    description="Unexpected and rapid death, sometimes the only sign of acute anthrax infection."
+)
+swelling = Symptom(
+    name="Swelling",
+    description="Swelling of the body or specific areas, such as the neck or abdomen, due to infection."
+)
+respiratory_distress = Symptom(
+    name="Respiratory Distress",
+    description="Difficulty breathing, which may occur in severe infections."
+)
+abortion = Symptom(
+    name="Abortion",
+    description="Premature expulsion of the fetus, a possible symptom in infected pregnant animals."
+)
 
 # Animals Treatments
 antibiotics = Treatment(
@@ -568,29 +595,7 @@ fmd.treatments.extend([antibiotics, hydration, deworming, topical_ointment, anti
 fmd.preventions.extend([vaccination, sanitation, quarantine, biosecurity, proper_nutrition, vector_control, clean_water, regular_health_checks,
                        stress_reduction, proper_waste_management, good_husbandry_practices, prompt_treatment, vaccination_schedule, rodent_control, environmental_control])
 
-anthrax.species.extend([cow, goat, pig, sheep, horse, rabbit, alpaca, llama, cat, dog]
-)
-bleeding_from_orifices = Symptom(
-    name="Bleeding from Orifices",
-    description="Bleeding from the mouth, nose, or anus, often seen in acute anthrax cases."
-)
-sudden_death = Symptom(
-    name="Sudden Death",
-    description="Unexpected and rapid death, sometimes the only sign of acute anthrax infection."
-)
-swelling = Symptom(
-    name="Swelling",
-    description="Swelling of the body or specific areas, such as the neck or abdomen, due to infection."
-)
-respiratory_distress = Symptom(
-    name="Respiratory Distress",
-    description="Difficulty breathing, which may occur in severe infections."
-)
-abortion = Symptom(
-    name="Abortion",
-    description="Premature expulsion of the fetus, a possible symptom in infected pregnant animals."
-)
-
+anthrax.species.extend([cow, goat, pig, sheep, horse, rabbit, alpaca, llama, cat, dog])
 anthrax.symptoms.extend([
     fever,
     loss_of_appetite,
@@ -667,7 +672,7 @@ supportive_care = Treatment(
 
 rabies.treatments.extend([
     isolation,
-    supportive_care,  # You might want to add this as a custom Treatment for hydration, nutrition, pain relief combined.
+    supportive_care, 
 ])
 
 rabies.preventions.extend([
@@ -682,20 +687,76 @@ rabies.preventions.extend([
 ])
 
 btb.species.extend([cow, goat, sheep, pig, horse])
-btb.symptoms.extend([fever, cough, skin_rash, blood_in_stool, weight_loss,
-                    lameness, loss_of_appetite, diarrhea, constipation, vomiting])
-btb.treatments.extend([antibiotics, hydration, deworming, topical_ointment, anti_inflammatory,
-                      pain_relief, wound_cleaning, antipyretics, nutritional_supplements, isolation])
-btb.preventions.extend([vaccination, sanitation, quarantine, biosecurity, proper_nutrition, vector_control, clean_water, regular_health_checks,
-                       stress_reduction, proper_waste_management, good_husbandry_practices, prompt_treatment, vaccination_schedule, rodent_control, environmental_control])
+btb.symptoms.extend([
+    fever,
+    cough,
+    weight_loss,
+    loss_of_appetite,
+     lethargy
+])
+
+btb.preventions.extend([
+    vaccination,                 
+    quarantine,                
+    biosecurity,                
+    regular_health_checks,      
+    proper_nutrition,           
+    clean_water,                
+    good_husbandry_practices,  
+    prompt_treatment,           
+    environmental_control,     
+    rodent_control,            
+    stress_reduction,          
+])
+
+btb.preventions.extend([
+    vaccination,
+    sanitation,
+    quarantine,
+    biosecurity,
+    proper_nutrition,
+    clean_water,
+    regular_health_checks,
+    stress_reduction,
+    proper_waste_management,
+    good_husbandry_practices,
+    prompt_treatment,
+    rodent_control,
+    environmental_control
+])
 
 brucellosis.species.extend([cow, goat, sheep, pig])
-brucellosis.symptoms.extend([fever, cough, skin_rash, blood_in_stool, weight_loss,
-                             lameness, loss_of_appetite, diarrhea, constipation, vomiting])
-brucellosis.treatments.extend([antibiotics, hydration, deworming, topical_ointment, anti_inflammatory,
-                               pain_relief, wound_cleaning, antipyretics, nutritional_supplements, isolation])
-brucellosis.preventions.extend([vaccination, sanitation, quarantine, biosecurity, proper_nutrition, vector_control, clean_water, regular_health_checks,
-                                stress_reduction, proper_waste_management, good_husbandry_practices, prompt_treatment, vaccination_schedule, rodent_control, environmental_control])
+brucellosis.symptoms.extend([
+    fever,
+    weight_loss,
+    loss_of_appetite,
+    lameness,
+    abortion,
+    swollen_udder,
+    joint_swelling,
+    lethargy
+])
+
+brucellosis.treatments.extend([
+    antibiotics,
+    isolation,
+    supportive_care,
+    anti_inflammatory,
+    nutritional_supplements
+])
+
+brucellosis.preventions.extend([
+    vaccination,
+    sanitation,
+    quarantine,
+    biosecurity,
+    proper_nutrition,
+    regular_health_checks,
+    good_husbandry_practices,
+    rodent_control,
+    prompt_treatment,
+    vaccination_schedule
+])
 
 # American Foulbrood (AFB)
 afb.species.extend([bee])
