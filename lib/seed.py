@@ -140,6 +140,30 @@ dead_brood = Symptom(
     name="Dead Brood",
     description="Brood that has died due to infection, often appearing discolored or sunken in the cell."
 )
+behavioral_changes = Symptom(
+    name="Behavioral Changes",
+    description="Unusual aggression, restlessness, or other abnormal behaviors often seen in animals infected with rabies."
+)
+excessive_salivation = Symptom(
+    name="Excessive Salivation",
+    description="Increased drooling or foaming at the mouth, commonly observed in rabies cases."
+)
+difficulty_swallowing = Symptom(
+    name="Difficulty Swallowing",
+    description="Trouble swallowing food or water, a symptom of rabies affecting the nervous system."
+)
+seizures = Symptom(
+    name="Seizures",
+    description="Sudden, uncontrolled electrical disturbances in the brain, leading to convulsions."
+)
+ataxia = Symptom(
+    name="Ataxia",
+    description="Loss of coordination or unsteady movements, often due to nervous system impairment."
+)
+excessive_vocalization = Symptom(
+    name="Excessive Vocalization",
+    description="Unusual or increased vocal sounds, such as barking, howling, or bellowing, seen in rabid animals."
+)
 
 
 # Animals Treatments
@@ -577,25 +601,86 @@ anthrax.symptoms.extend([
     respiratory_distress,
     abortion
 ])
-anthrax.treatments.extend([antibiotics, hydration, deworming, topical_ointment, anti_inflammatory,
-                          pain_relief, wound_cleaning, antipyretics, nutritional_supplements, isolation])
-anthrax.preventions.extend([vaccination, sanitation, quarantine, biosecurity, proper_nutrition, vector_control, clean_water, regular_health_checks,
-                           stress_reduction, proper_waste_management, good_husbandry_practices, prompt_treatment, vaccination_schedule, rodent_control, environmental_control])
+anthrax.treatments.extend([
+    antibiotics,
+    isolation,
+    hydration  # optional/supportive
+])
+anthrax.preventions.extend([
+    vaccination,
+    quarantine,
+    biosecurity,
+    sanitation,
+    proper_waste_management,
+    environmental_control,
+    rodent_control,  # optional
+    clean_water,     # optional
+])
 
 swine_erysipelas.species.extend([pig])
-swine_erysipelas.symptoms.extend([fever, skin_rash, cough, blood_in_stool,
-                                 weight_loss, lameness, loss_of_appetite, diarrhea, constipation, vomiting])
-swine_erysipelas.treatments.extend([antibiotics, hydration, deworming, topical_ointment, anti_inflammatory,
-                                   pain_relief, wound_cleaning, antipyretics, nutritional_supplements, isolation])
-swine_erysipelas.preventions.extend([vaccination, sanitation, quarantine, biosecurity, proper_nutrition, vector_control, clean_water, regular_health_checks,
-                                    stress_reduction, proper_waste_management, good_husbandry_practices, prompt_treatment, vaccination_schedule, rodent_control, environmental_control])
+swine_erysipelas.symptoms.extend([
+    fever,
+    skin_rash,
+    lameness,
+    loss_of_appetite,
+])
+swine_erysipelas.treatments.extend([
+    antibiotics,
+    isolation,
+    hydration,
+    anti_inflammatory,
+    pain_relief,
+])
+swine_erysipelas.preventions.extend([
+    vaccination,
+    sanitation,
+    quarantine,
+    biosecurity,
+    proper_nutrition,
+    clean_water,
+    regular_health_checks,
+    prompt_treatment,
+    good_husbandry_practices,
+    vaccination_schedule,
+    environmental_control,
+    stress_reduction,
+    proper_waste_management,
+])
 
 rabies.species.extend([dog, cat, cow, goat, sheep, pig, horse])
-rabies.symptoms.extend([fever, cough, skin_rash, blood_in_stool, weight_loss,
-                       lameness, loss_of_appetite, diarrhea, constipation, vomiting])
-rabies.treatments.extend([antibiotics, hydration, isolation])
-rabies.preventions.extend([vaccination, sanitation, quarantine, biosecurity, proper_nutrition, vector_control, clean_water, regular_health_checks,
-                          stress_reduction, proper_waste_management, good_husbandry_practices, prompt_treatment, vaccination_schedule, rodent_control, environmental_control])
+
+rabies.symptoms.extend([
+    fever,
+    behavioral_changes,
+    excessive_salivation,
+    paralysis,
+    difficulty_swallowing,
+    seizures,
+    ataxia,
+    excessive_vocalization,
+])
+
+supportive_care = Treatment(
+    name="Supportive Care",
+    method="Provide hydration, nutrition, and pain relief to support recovery."
+)
+
+rabies.treatments.extend([
+    isolation,
+    supportive_care,  # You might want to add this as a custom Treatment for hydration, nutrition, pain relief combined.
+])
+
+rabies.preventions.extend([
+    vaccination,
+    quarantine,
+    biosecurity,
+    regular_health_checks,
+    prompt_treatment,
+    vaccination_schedule,
+    good_husbandry_practices,
+    environmental_control,
+])
+
 btb.species.extend([cow, goat, sheep, pig, horse])
 btb.symptoms.extend([fever, cough, skin_rash, blood_in_stool, weight_loss,
                     lameness, loss_of_appetite, diarrhea, constipation, vomiting])
