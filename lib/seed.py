@@ -57,6 +57,10 @@ paralysis = Symptom(
     name="Paralysis", description="Loss of muscle function in wings or legs, often resulting from viral infections like Chronic Bee Paralysis Virus (CBPV)."
 )
 
+lethargy = Symptom(
+    name="Lethargy", description="A state of tiredness, weariness, fatigue, or lack of energy, often indicating illness or infection."
+)
+
 trembling = Symptom(
     name="Trembling", description="Uncontrolled shaking of the bee’s body or wings, typically seen in neurological or viral infections."
 )
@@ -131,6 +135,10 @@ queen_rejection = Symptom(
 
 sudden_collapse = Symptom(
     name="Sudden Colony Collapse", description="Rapid disappearance of the worker population, commonly referred to as Colony Collapse Disorder (CCD)."
+)
+dead_brood = Symptom(
+    name="Dead Brood",
+    description="Brood that has died due to infection, often appearing discolored or sunken in the cell."
 )
 
 
@@ -217,6 +225,15 @@ thermal_treatment = Treatment(
 
 honey_frame_removal = Treatment(
     name="Honey Frame Removal", method="Extract honey frames with potential contamination to prevent pathogen spread."
+)
+
+oxytetracycline = Treatment(
+    name="Oxytetracycline",
+    method="Administer oxytetracycline as an antibiotic treatment for bacterial infections such as European Foulbrood."
+)
+varroa_mite_control = Treatment(
+    name="Varroa Mite Control",
+    method="Implement integrated pest management strategies, including chemical and non-chemical methods, to control Varroa mite infestations."
 )
 
 
@@ -338,6 +355,11 @@ pest_monitoring = Prevention(
     name="Pest Monitoring",
     method="Regularly monitor for pests such as Varroa mites to enable timely control measures."
 )
+hive_ventilation = Prevention(
+    name="Hive Ventilation",
+    method="Ensure proper airflow in the hive to reduce moisture and prevent disease."
+)
+
 
 # Disease
 fmd = Disease(
@@ -522,10 +544,39 @@ fmd.treatments.extend([antibiotics, hydration, deworming, topical_ointment, anti
 fmd.preventions.extend([vaccination, sanitation, quarantine, biosecurity, proper_nutrition, vector_control, clean_water, regular_health_checks,
                        stress_reduction, proper_waste_management, good_husbandry_practices, prompt_treatment, vaccination_schedule, rodent_control, environmental_control])
 
-anthrax.species.extend([cow, goat, chicken, pig, sheep,
-                       duck, horse, rabbit, turkey, alpaca, llama, cat, dog])
-anthrax.symptoms.extend([fever, cough, skin_rash, blood_in_stool, weight_loss,
-                        lameness, loss_of_appetite, diarrhea, constipation, vomiting])
+anthrax.species.extend([cow, goat, pig, sheep, horse, rabbit, alpaca, llama, cat, dog]
+)
+bleeding_from_orifices = Symptom(
+    name="Bleeding from Orifices",
+    description="Bleeding from the mouth, nose, or anus, often seen in acute anthrax cases."
+)
+sudden_death = Symptom(
+    name="Sudden Death",
+    description="Unexpected and rapid death, sometimes the only sign of acute anthrax infection."
+)
+swelling = Symptom(
+    name="Swelling",
+    description="Swelling of the body or specific areas, such as the neck or abdomen, due to infection."
+)
+respiratory_distress = Symptom(
+    name="Respiratory Distress",
+    description="Difficulty breathing, which may occur in severe infections."
+)
+abortion = Symptom(
+    name="Abortion",
+    description="Premature expulsion of the fetus, a possible symptom in infected pregnant animals."
+)
+
+anthrax.symptoms.extend([
+    fever,
+    loss_of_appetite,
+    lethargy,
+    bleeding_from_orifices,
+    sudden_death,
+    swelling,
+    respiratory_distress,
+    abortion
+])
 anthrax.treatments.extend([antibiotics, hydration, deworming, topical_ointment, anti_inflammatory,
                           pain_relief, wound_cleaning, antipyretics, nutritional_supplements, isolation])
 anthrax.preventions.extend([vaccination, sanitation, quarantine, biosecurity, proper_nutrition, vector_control, clean_water, regular_health_checks,
@@ -580,10 +631,7 @@ efb.species.extend([bee])
 efb.symptoms.extend([
     discolored_larvae, larval_twisting, foul_odor
 ])
-oxytetracycline = Treatment(
-    name="Oxytetracycline",
-    method="Administer oxytetracycline as an antibiotic treatment for bacterial infections such as European Foulbrood."
-)
+
 efb.treatments.extend([
     oxytetracycline, hive_relocation
 ])
@@ -599,10 +647,7 @@ nosema.symptoms.extend([
 nosema.treatments.extend([
     nosema_control, protein_patties
 ])
-hive_ventilation = Prevention(
-    name="Hive Ventilation",
-    method="Ensure proper airflow in the hive to reduce moisture and prevent disease."
-)
+
 nosema.preventions.extend([
     feeding_practices, hive_ventilation, hive_spacing
 ])
@@ -620,10 +665,7 @@ chalkbrood.preventions.extend([
 ])
 
 # Sacbrood Virus (SBV)
-dead_brood = Symptom(
-    name="Dead Brood",
-    description="Brood that has died due to infection, often appearing discolored or sunken in the cell."
-)
+
 sbv.species.extend([bee])
 sbv.symptoms.extend([
     sac_like_larvae, dead_brood, sunken_cappings
@@ -640,18 +682,23 @@ dwv.species.extend([bee])
 dwv.symptoms.extend([
     deformed_wings, paralysis, crawling
 ])
-varroa_mite_control = Treatment(
-    name="Varroa Mite Control",
-    method="Implement integrated pest management strategies, including chemical and non-chemical methods, to control Varroa mite infestations."
+dwv.preventions.extend([
+    pest_monitoring, genetic_selection, hive_inspection
+])
+
+antiviral_medications = Treatment(
+    name="Antiviral Medications",
+    method="Administer antiviral drugs or supportive therapies to reduce viral load and support recovery."
+)
+supportive_care = Treatment(
+    name="Supportive Care",
+    method="Provide nutritional supplements, hydration, and stress reduction to help bees recover from viral infections."
 )
 dwv.treatments.extend([
-    antiviral_probiotics, varroa_mite_control
+    antiviral_medications, supportive_care
 ])
-dwv.preventions.extend([
-    pest_monitoring, genetic_selection, hive_inspection])
 session.add_all([cow, goat, chicken, pig, sheep, duck, horse, rabbit, turkey, alpaca, llama, cat,
-                dog, fish, bee, fever, cough, skin_rash, blood_in_stool, weight_loss, lameness, loss_of_appetite, diarrhea, constipation, vomiting, antibiotics, hydration, vaccination, sanitation, fmd, anthrax, swine_erysipelas, rabies, btb, brucellosis, efb, nosema, chalkbrood, sbv, dwv, dead_brood])
+                dog, fish, bee, fever, cough, skin_rash, blood_in_stool, weight_loss, lameness, loss_of_appetite, diarrhea, constipation, vomiting, lethargy, antibiotics, hydration, vaccination, sanitation, fmd, anthrax, swine_erysipelas, rabies, btb, brucellosis, efb, nosema, chalkbrood, sbv, dwv, dead_brood])
 session.commit()
-
 
 print("Sample data added successfully!")
