@@ -560,7 +560,7 @@ brucellosis.treatments.extend([antibiotics, hydration, deworming, topical_ointme
                                pain_relief, wound_cleaning, antipyretics, nutritional_supplements, isolation])
 brucellosis.preventions.extend([vaccination, sanitation, quarantine, biosecurity, proper_nutrition, vector_control, clean_water, regular_health_checks,
                                 stress_reduction, proper_waste_management, good_husbandry_practices, prompt_treatment, vaccination_schedule, rodent_control, environmental_control])
-# specify for bees only
+
 # American Foulbrood (AFB)
 afb.species.extend([bee])
 afb.symptoms.extend([
