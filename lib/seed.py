@@ -523,6 +523,14 @@ Effective control requires strict biosecurity protocols, movement restrictions o
     image_url="https://example.com/btb.jpg"
 )
 
+cae = Disease (
+    name ="Caprine Arthritis Encephalitis",
+    abbreviation = "CAE",
+    region = "worldwide",
+    description = """A viral disease affecting goats with arthritic and neurological manifestations""",
+    image_url = "https://example.com/btb.jpg",
+)
+
 brucellosis = Disease(
     name="Brucellosis",
     abbreviation="BRU",
@@ -639,6 +647,18 @@ fmd.preventions.extend([
     proper_nutrition, regular_health_checks, stress_reduction,
     proper_waste_management, good_husbandry_practices, prompt_treatment,
     vaccination_schedule, environmental_control
+])
+
+cae. species. extend ([goat, sheep, cow, horse])
+cae. symptoms. extend([ 
+    fever, lameness, hoof_lesions,
+])
+
+cae.treatments.extend ([
+    supportive_care, hydration, isolation
+])
+cae.preventions.extend ([
+    vaccination, quarantine, sanitation, proper_nutrition
 ])
 
 # Anthrax relationships
