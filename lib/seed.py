@@ -523,12 +523,20 @@ Effective control requires strict biosecurity protocols, movement restrictions o
     image_url="https://example.com/btb.jpg"
 )
 
-cae = Disease (
-    name ="Caprine Arthritis Encephalitis",
-    abbreviation = "CAE",
-    region = "worldwide",
-    description = """A viral disease affecting goats with arthritic and neurological manifestations""",
-    image_url = "https://example.com/btb.jpg",
+cae = Disease(
+    name="Caprine Arthritis Encephalitis",
+    abbreviation="CAE",
+    region="Worldwide",
+    description="""Caprine Arthritis Encephalitis (CAE) is a chronic, progressive viral disease that affects goats and is caused by a lentivirus, a type of retrovirus. The disease is primarily transmitted from mother to kid through infected colostrum or milk, though it can also spread through close contact and contaminated equipment. Once infected, a goat may remain a carrier for life, even without showing symptoms.
+
+CAE presents in several clinical forms, most notably arthritis in adult goats and encephalitis in kids. The arthritic form is the most common and is characterized by swollen, painful joints, especially in the knees, leading to stiffness, lameness, and reduced mobility. Affected goats often have difficulty rising or walking, which can lead to decreased productivity and quality of life. In young kids, the encephalitic form results in neurological signs such as tremors, ataxia (lack of muscle coordination), and eventual paralysis, often leading to death if untreated.
+
+Other manifestations of CAE may include mastitis (hard udder), chronic weight loss, and pneumonia. The hard udder form leads to decreased milk production and affects kid nutrition and survival. Since the disease is incurable and lifelong, affected animals are typically managed with supportive care to reduce pain and improve comfort.
+
+Effective prevention strategies for CAE focus on biosecurity and management practices. These include separating kids from infected does at birth, feeding only heat-treated colostrum and pasteurized milk, routine testing of herds, and culling or segregating positive animals. There is currently no vaccine or definitive cure for CAE, making control efforts essential in maintaining herd health and productivity.
+
+Caprine Arthritis Encephalitis has significant economic implications for goat producers due to reduced milk yield, increased veterinary costs, and premature culling. Educating goat owners and implementing strict herd health programs are critical to controlling the spread of this debilitating disease.""",
+    image_url="https://example.com/cae.jpg",
 )
 
 brucellosis = Disease(
@@ -649,16 +657,67 @@ fmd.preventions.extend([
     vaccination_schedule, environmental_control
 ])
 
-cae. species. extend ([goat, sheep, cow, horse])
-cae. symptoms. extend([ 
-    fever, lameness, hoof_lesions,
+cae.species.extend([goat])
+
+difficulty_rising = Symptom(
+    name="Difficulty Rising",
+    description="Trouble standing up or getting to a standing position, often due to joint pain or weakness."
+)
+chronic_weight_loss = Symptom(
+    name="Chronic Weight Loss",
+    description="Long-term, progressive loss of body weight, commonly seen in animals with chronic diseases."
+)
+tremors = Symptom(
+    name="Tremors",
+    description="Involuntary, rhythmic muscle contractions leading to shaking movements, often due to neurological disorders."
+)
+
+cae.symptoms.extend([
+    lameness,
+    joint_swelling,
+    difficulty_rising,
+    paralysis,
+    ataxia,
+    tremors,
+    chronic_weight_loss,
+    swollen_udder,
 ])
 
-cae.treatments.extend ([
-    supportive_care, hydration, isolation
+cae.treatments.extend([
+    supportive_care,
+    anti_inflammatory,
+    pain_relief,
+    isolation,
+    nutritional_supplements,
 ])
-cae.preventions.extend ([
-    vaccination, quarantine, sanitation, proper_nutrition
+
+separation_of_kids = Prevention(
+    name="Separation of Kids",
+    method="Separate newborn kids from infected does at birth to prevent transmission of CAE."
+)
+clean_equipment = Prevention(
+    name="Clean Equipment",
+    method="Ensure all equipment is thoroughly cleaned and disinfected to prevent the spread of CAE."
+)
+testing_and_culling = Prevention(
+    name="Testing and Culling",
+    method="Regularly test animals for CAE and cull or segregate those that test positive to prevent disease spread."
+)
+pasteurized_colostrum = Prevention(
+    name="Pasteurized Colostrum",
+    method="Feed kids only pasteurized colostrum and milk to prevent transmission of CAE virus."
+)
+
+cae.preventions.extend([
+    quarantine,
+    sanitation,
+    proper_nutrition,
+    biosecurity,
+    regular_health_checks,
+    clean_equipment,
+    separation_of_kids,
+    testing_and_culling,
+    pasteurized_colostrum,
 ])
 
 # Anthrax relationships
@@ -758,18 +817,18 @@ chalkbrood.preventions.extend([adequate_ventilation, genetic_selection, hive_spa
 
 # Sacbrood Virus relationships
 sbv.species.extend([bee])
-sbv.symptoms.extend([sac_like_larvae, dead_brood, sunken_cappings])
-sbv.treatments.extend([queen_replacement, hive_disinfection])
-sbv.preventions.extend([apiary_hygiene, swarm_control, genetic_selection])
-
-# Deformed Wing Virus relationships
-dwv.species.extend([bee])
-dwv.symptoms.extend([deformed_wings, paralysis, crawling])
-dwv.treatments.extend([antiviral_medications, supportive_care])
-dwv.preventions.extend([pest_monitoring, genetic_selection, hive_inspection])
-
-# Add all objects to session
-all_species = [cow, goat, chicken, pig, sheep, duck, horse, rabbit, turkey, alpaca, llama, cat, dog, fish, bee]
+all_symptoms = [
+    fever, cough, skin_rash, blood_in_stool, weight_loss, lameness, loss_of_appetite,
+    diarrhea, constipation, vomiting, paralysis, lethargy, trembling, crawling,
+    distended_abdomen, dysentery, discolored_larvae, mummified_larvae, foul_odor,
+    sunken_cappings, larval_twisting, sac_like_larvae, deformed_wings, flightlessness,
+    hairless_abdomen, reduced_flight_activity, scattered_brood, larval_death_before_capping,
+    abnormal_pupa, queen_rejection, sudden_collapse, dead_brood, behavioral_changes,
+    excessive_salivation, difficulty_swallowing, seizures, ataxia, excessive_vocalization,
+    swollen_udder, joint_swelling, bleeding_from_orifices, sudden_death, swelling,
+    respiratory_distress, abortion, vesicles_in_mouth_and_feet, reluctance_to_move,
+    ulcers, stomatitis, hoof_lesions, difficulty_rising, chronic_weight_loss, tremors
+]
 
 all_symptoms = [
     fever, cough, skin_rash, blood_in_stool, weight_loss, lameness, loss_of_appetite,
@@ -781,7 +840,7 @@ all_symptoms = [
     excessive_salivation, difficulty_swallowing, seizures, ataxia, excessive_vocalization,
     swollen_udder, joint_swelling, bleeding_from_orifices, sudden_death, swelling,
     respiratory_distress, abortion, vesicles_in_mouth_and_feet, reluctance_to_move,
-    ulcers, stomatitis, hoof_lesions
+    ulcers, stomatitis, hoof_lesions, difficulty_rising, chronic_weight_loss, tremors
 ]
 
 all_treatments = [
@@ -790,7 +849,12 @@ all_treatments = [
     supportive_care, thymol_treatment, formic_acid, oxalic_acid, antiviral_probiotics,
     queen_replacement, hive_relocation, sugar_dusting, essential_oils, hive_disinfection,
     protein_patties, nosema_control, brood_interruption, drone_trapping, thermal_treatment,
-    honey_frame_removal, oxytetracycline, varroa_mite_control, antiviral_medications
+    honey_frame_removal, oxytetracycline, varroa_mite_control, antiviral_medications,
+    nutritional_supplements, isolation, supportive_care, thymol_treatment, formic_acid,
+]
+
+all_species = [
+    cow, goat, chicken, pig, sheep, duck, horse, rabbit, turkey, alpaca, llama, cat, dog, fish, bee
 ]
 
 all_preventions = [
@@ -800,7 +864,7 @@ all_preventions = [
     environmental_control, movement_control, hive_inspection, apiary_hygiene,
     equipment_sterilization, sourcing_from_healthy_hives, feeding_practices,
     hive_spacing, adequate_ventilation, genetic_selection, swarm_control,
-    pest_monitoring, hive_ventilation
+    pest_monitoring, hive_ventilation, hive_inspection, apiary_hygiene,
 ]
 
 all_diseases = [fmd, anthrax, swine_erysipelas, rabies, btb, brucellosis, afb, efb, nosema, chalkbrood, sbv, dwv]
