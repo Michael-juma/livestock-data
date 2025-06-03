@@ -869,7 +869,7 @@ all_preventions = [
 
 all_diseases = [fmd, anthrax, swine_erysipelas, rabies, btb, brucellosis, afb, efb, nosema, chalkbrood, sbv, dwv]
 
-# Add all objects to the session
+#all objects to the session
 session.add_all(all_species + all_symptoms + all_treatments + all_preventions + all_diseases)
 
 # Commit the transaction
