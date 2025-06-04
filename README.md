@@ -30,8 +30,7 @@ livestock-data/
 │ ├── cli.py # CLI commands
 │ ├── models.py # ORM models (Disease, Species, Symptom, etc.)
 │ ├── database.py # DB engine and session
-├── migrations/ 
-├── seed.py # Optional: Seeding database
+├── seed.py 
 ├── README.md
 
 
